@@ -14,4 +14,8 @@ export class Vehicle {
         this._axleCount = axleCount;
     }
 
+    get axleCount(): number {
+        return this._axleCount;
+    }
+
 }
