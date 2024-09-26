@@ -1,12 +1,11 @@
-<!-- <router-outlet /> -->
+<div class="d-flex flex-nowrap h-100">
+  <app-navbar></app-navbar>
 
-<div class="app-layout">
-  <app-header></app-header>
-  <div class="main-container">
-    <app-sidebar></app-sidebar>
-    <main>
-      <h2>Welcome to the main content!</h2>
-      <p>This is where the main content of the application will be displayed.</p>
+  <div class="col d-flex flex-column">
+    <app-header></app-header>
+
+    <main class="main-content col container">
+      <router-outlet />
     </main>
   </div>
 </div>
