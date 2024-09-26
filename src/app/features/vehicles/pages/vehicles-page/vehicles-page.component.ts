@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { VehiclesTableComponent } from "../../components/vehicles-table/vehicles-table.component";
 
 @Component({
-  selector: 'app-vehicles-page',
+  selector: 'vehicles-page',
   standalone: true,
-  imports: [],
+  imports: [VehiclesTableComponent],
   templateUrl: './vehicles-page.component.html',
   styleUrl: './vehicles-page.component.scss'
 })
