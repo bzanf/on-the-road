@@ -7,20 +7,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>mdo</td>
-        </tr>
-        <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fat</td>
-        </tr>
-        <tr>
-            <td>test 1</td>
-            <td>test 2</td>
-            <td>twitter</td>
-        </tr>
+        @for (item of data; track $index) {
+            <tr>
+                <td>{{ item.plate }}</td>
+                <td>{{ item.brand + '/' + item.model }}</td>
+                <td>{{ item.type }}</td>
+            </tr>
+        }
     </tbody>
 </table>
