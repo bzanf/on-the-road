@@ -1,5 +1,7 @@
 # OnTheRoad
 
+This is an application, still under development, created with Angular. The goal of this project is to provide a web application for truck fleet management.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
 
 ## Development server
