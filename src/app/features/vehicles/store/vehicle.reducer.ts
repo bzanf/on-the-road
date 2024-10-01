@@ -1,5 +1,4 @@
 import { createReducer, on } from '@ngrx/store';
-import { load } from './vehicle.actions';
 import { Vehicle } from '../../../domain/entities/vehicle.entity';
 import * as VehicleActions from './vehicle.actions';
 
@@ -15,13 +14,14 @@ export const initialState: State = {
     error: null,
 };
 
-export const counterReducer = createReducer(
+export const vehicleReducer = createReducer(
     initialState,
     on(VehicleActions.load, state => ({ ...state, loading: true })),
     on(VehicleActions.loadSuccess, (state, { vehicles }) => ({ ...state, loading: false, vehicles })),
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
 
-    on(VehicleActions.addVehicle, (state, { vehicle }) => ({ ...state, loading: true })),
-    on(VehicleActions.addVehicleSuccess, (state, { vehicle }) => ({ ...state, vehicles: [...state.vehicles, vehicle] })),
+    // TODO: remove vehicle property
+    on(VehicleActions.add, (state, { vehicle }) => ({ ...state, loading: true })),
+    on(VehicleActions.addSuccess, (state, { vehicle }) => ({ ...state, vehicles: [...state.vehicles, vehicle] })),
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
 );

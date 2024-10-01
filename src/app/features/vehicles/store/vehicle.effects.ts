@@ -7,33 +7,36 @@ import { catchError, map, mergeMap, of } from "rxjs";
 @Injectable()
 export class VehicleEffects {
 
+    loadVehicles$;
+    addVehicle$;
+
     constructor(
         private actions$: Actions,
         private vehicleService: VehicleService,
-    ) { }
-
-    loadVehicles$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(VehicleActions.load),
-            mergeMap(() =>
-                this.vehicleService.getAll().pipe(
-                    map(vehicles => VehicleActions.loadSuccess({ vehicles })),
-                    catchError(error => of(VehicleActions.loadFailure({ error })))
+    ) { 
+        this.loadVehicles$ = createEffect(() =>
+            this.actions$.pipe(
+                ofType(VehicleActions.load),
+                mergeMap(() =>
+                    this.vehicleService.getAll().pipe(
+                        map(vehicles => VehicleActions.loadSuccess({ vehicles })),
+                        catchError(error => of(VehicleActions.loadFailure({ error })))
+                    )
                 )
             )
-        )
-    );
-
-    addVehicle$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(VehicleActions.addVehicle),
-            mergeMap(action =>
-                this.vehicleService.addVehicle(action.vehicle).pipe(
-                    map(vehicle => VehicleActions.addVehicleSuccess({ vehicle })),
-                    catchError(error => of(VehicleActions.addVehicleFailure({ error })))
+        );
+    
+        this.addVehicle$ = createEffect(() =>
+            this.actions$.pipe(
+                ofType(VehicleActions.add),
+                mergeMap(action =>
+                    this.vehicleService.addVehicle(action.vehicle).pipe(
+                        map(vehicle => VehicleActions.addSuccess({ vehicle })),
+                        catchError(error => of(VehicleActions.addFailure({ error })))
+                    )
                 )
             )
-        )
-    );
+        );
+    }
 
 }
