@@ -1,4 +1,4 @@
-# OnTheRoad
+# OnTheRoad (still under development)
 
 This is an application, still under development, created with Angular. The goal of this project is to provide a web application for truck fleet management.
 
