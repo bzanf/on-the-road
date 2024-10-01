@@ -7,7 +7,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (item of data; track $index) {
+        @for (item of (data$ | async); track $index) {
             <tr>
                 <td>{{ item.plate }}</td>
                 <td>{{ item.brand + '/' + item.model }}</td>
