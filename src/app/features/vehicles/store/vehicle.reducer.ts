@@ -20,8 +20,7 @@ export const vehicleReducer = createReducer(
     on(VehicleActions.loadSuccess, (state, { vehicles }) => ({ ...state, loading: false, vehicles })),
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
 
-    // TODO: remove vehicle property
-    on(VehicleActions.add, (state, { vehicle }) => ({ ...state, loading: true })),
+    on(VehicleActions.add, state => ({ ...state, loading: true })),
     on(VehicleActions.addSuccess, (state, { vehicle }) => ({ ...state, vehicles: [...state.vehicles, vehicle] })),
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
 );
