@@ -1,4 +1,33 @@
-<vehicles-table [data$]="vehicles$"></vehicles-table>
+<div class="d-flex flex-wrap gap-3">
+    <custom-card title="BY YEAR">
+        <div card-body>No data.</div>
+    </custom-card>
 
-<button (click)="test()">test</button>
-<button (click)="addVehicle()">add</button>
+    <custom-card title="BY BRAND/MODEL">
+        <div card-body>No data. No data.</div>
+    </custom-card>
+
+    <custom-card>
+        <div card-body>test</div>
+    </custom-card>
+
+    <custom-card>
+        <div card-body>test</div>
+    </custom-card>
+
+    <custom-card title="VEHICLES" class="w-100 h-100 row">
+        <vehicles-table card-body [data$]="vehicles$"></vehicles-table>
+    </custom-card>
+    
+
+    <custom-card>
+        <div card-body>test</div>
+    </custom-card>
+
+    <custom-card>
+        <div card-body>test</div>
+    </custom-card>
+
+    <button (click)="test()">test</button>
+    <button (click)="addVehicle()">add</button>
+</div>

@@ -6,11 +6,12 @@ import { selectAll, selectLoading } from '../../store/vehicle.selectors';
 import { load, add } from '../../store/vehicle.actions';
 import { Observable } from 'rxjs';
 import { randomVehicles } from '../../../../shared/utils/random-vehicle';
+import { CustomCardComponent } from '../../../../shared/components/custom-card/custom-card.component';
 
 @Component({
   selector: 'vehicles-page',
   standalone: true,
-  imports: [VehiclesTableComponent],
+  imports: [VehiclesTableComponent, CustomCardComponent],
   templateUrl: './vehicles-page.component.html',
   styleUrl: './vehicles-page.component.scss'
 })
