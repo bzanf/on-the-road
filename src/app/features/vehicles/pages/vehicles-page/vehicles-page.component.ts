@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import { selectAll, selectLoading } from '../../store/vehicle.selectors';
 import { load, add } from '../../store/vehicle.actions';
 import { Observable } from 'rxjs';
+import { randomVehicles } from '../../../../shared/utils/random-vehicle';
 
 @Component({
   selector: 'vehicles-page',
@@ -32,7 +33,7 @@ export class VehiclesPageComponent implements OnInit {
   }
 
   addVehicle() {
-    const vehicle = new Vehicle(1, "ZZZ1234", "ZZZZ", "YYYY", 1, 3);
+    const vehicle = randomVehicles(1)[0];
     this.store.dispatch(add({ vehicle }));
   }
 
