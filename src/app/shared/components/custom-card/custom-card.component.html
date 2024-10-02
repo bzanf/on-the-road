@@ -1,0 +1,16 @@
+<div class="card h-100">
+    <div class="card-header">
+        @if (title) {
+            <h6 class="text-muted">{{ title }}</h6>
+        }
+        <ng-content select="[card-header]"></ng-content>
+    </div>
+
+    <div class="card-body">
+        <ng-content select="[card-body]"></ng-content>
+    </div>
+
+    <div class="card-footer">
+        <ng-content select="[card-footer]"></ng-content>
+    </div>
+</div>
