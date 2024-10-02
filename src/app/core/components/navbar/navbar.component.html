@@ -1,34 +1,30 @@
 <aside class="d-flex flex-column col" style="width: 4.5rem;">
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li class="nav-item">
-            <a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip"
-                data-bs-placement="right" data-bs-original-title="Home">
+            <a routerLink="/"
+               class="nav-link py-3 border-bottom" 
+               [ngClass]="routeIsActive('/') ? 'active' : ''"
+               aria-current="page" 
+               title="" 
+               data-bs-toggle="tooltip"
+               data-bs-placement="right" 
+               data-bs-original-title="Home"
+            >
                 <i class="bi bi-house"></i>
             </a>
         </li>
+
+        <li class="nav-item">
+          <a routerLink="/vehicles"
+             class="nav-link py-3 border-bottom"
+             [ngClass]="routeIsActive('/vehicles') ? 'active' : ''" 
+             aria-current="page" 
+             data-bs-toggle="tooltip"
+             data-bs-placement="right" 
+             data-bs-original-title="Vehicles"
+          >
+            <i class="bi bi-truck"></i>
+          </a>
+      </li>
     </ul>
 </aside>
-
-<!-- <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 250px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <span class="fs-4">Sidebar</span>
-    </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          Dashboard
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-dark">
-          Orders
-        </a>
-      </li>
-    </ul>
-  </div> -->
