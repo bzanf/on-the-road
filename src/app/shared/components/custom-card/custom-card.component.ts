@@ -13,7 +13,7 @@ export class CustomCardComponent {
     return !(this.classNames?.split(' ').includes('w-100') ?? false);
   }
 
-  @Input() title?: string;
+  @Input() headerTitle?: string;
 
   constructor(@Attribute('class') private classNames: string) { }
 

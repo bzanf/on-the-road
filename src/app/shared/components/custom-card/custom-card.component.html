@@ -1,7 +1,7 @@
 <div class="card h-100">
     <div class="card-header">
-        @if (title) {
-            <h6 class="text-muted">{{ title }}</h6>
+        @if (headerTitle) {
+            <h6 class="text-muted">{{ headerTitle }}</h6>
         }
         <ng-content select="[card-header]"></ng-content>
     </div>
