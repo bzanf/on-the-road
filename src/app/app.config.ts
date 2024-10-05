@@ -7,12 +7,13 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { VehicleEffects } from './features/vehicles/store/vehicle.effects';
 import { vehicleReducer } from './features/vehicles/store/vehicle.reducer';
+import { localStorageReducer } from './core/store/local-storage.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideStore({ vehicle: vehicleReducer }),
+    provideStore({ vehicle: vehicleReducer }, { metaReducers: [localStorageReducer] }),
     provideEffects(VehicleEffects),
     { provide: VehicleRepository, useClass: VehicleInMemoryRepository },
   ]

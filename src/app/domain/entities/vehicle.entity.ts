@@ -18,6 +18,10 @@ export class Vehicle {
         this._axleCount = axleCount;
     }
 
+    get id(): number {
+        return this._id;
+    }
+
     get plate(): string {
         return this._plate;
     }
@@ -36,6 +40,17 @@ export class Vehicle {
 
     get axleCount(): number {
         return this._axleCount;
+    }
+
+    static fromJSON(json: any): Vehicle {
+        return new Vehicle(
+            json._id,
+            json._plate,
+            json._brand,
+            json._model,
+            json._type,
+            json._axleCount
+        );
     }
 
 }
