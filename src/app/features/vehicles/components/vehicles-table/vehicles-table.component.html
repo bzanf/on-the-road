@@ -1,4 +1,10 @@
-<table class="table table-hover">
+<ag-grid-angular
+    class="ag-theme-quartz no-border"
+    style="height: 350px;"
+    [rowData]="data$ | async"
+    [columnDefs]="colDefs" /> 
+
+<!-- <table class="table table-hover">
     <thead>
         <tr>
             <th scope="col">Plate</th>
@@ -15,4 +21,4 @@
             </tr>
         }
     </tbody>
-</table>
+</table> -->
