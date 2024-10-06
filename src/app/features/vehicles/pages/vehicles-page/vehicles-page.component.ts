@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { VehiclesTableComponent } from "../../components/vehicles-table/vehicles-table.component";
-import { Vehicle } from '../../../../domain/entities/vehicle.entity';
 import { Store } from '@ngrx/store';
 import { selectAll, selectLoading } from '../../store/vehicle.selectors';
 import { load, add } from '../../store/vehicle.actions';
 import { Observable } from 'rxjs';
 import { randomVehicles } from '../../../../shared/utils/random-vehicle';
 import { CustomCardComponent } from '../../../../shared/components/custom-card/custom-card.component';
+import { Vehicle } from '../../../../core/domain/entities/vehicle.entity';
 
 @Component({
   selector: 'vehicles-page',

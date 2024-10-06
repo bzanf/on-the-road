@@ -1,13 +1,13 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import { VehicleInMemoryRepository } from './infrastructure/repositories/vehicle-in-memory.repository';
-import { VehicleRepository } from './domain/repositories/vehicle.repository';
+import { VehicleInMemoryRepository } from './app/core/infrastructure/repositories/vehicle-in-memory.repository';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { VehicleEffects } from './features/vehicles/store/vehicle.effects';
-import { vehicleReducer } from './features/vehicles/store/vehicle.reducer';
-import { localStorageReducer } from './core/store/local-storage.reducer';
+import { VehicleEffects } from './app/features/vehicles/store/vehicle.effects';
+import { vehicleReducer } from './app/features/vehicles/store/vehicle.reducer';
+import { routes } from './app/core/presentation/routing/app.routes';
+import { localStorageReducer } from './app/core/application/store/local-storage.reducer';
+import { VehicleRepository } from './app/core/domain/repositories/vehicle.repository';
 
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { Vehicle } from '../../../../domain/entities/vehicle.entity';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef } from 'ag-grid-community';
 import { randomVehicles } from '../../../../shared/utils/random-vehicle';
+import { Vehicle } from '../../../../core/domain/entities/vehicle.entity';
 
 @Component({
   selector: 'vehicles-table',

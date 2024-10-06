@@ -1,4 +1,4 @@
-import { VehicleType } from "../enums/vehicle-type.enum";
+import { VehicleType } from "./enums/vehicle-type.enum";
 
 export class Vehicle {
 

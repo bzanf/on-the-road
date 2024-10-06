@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
-import { Vehicle } from '../../../domain/entities/vehicle.entity';
-import { VehicleRepository } from '../../../domain/repositories/vehicle.repository';
 import { Observable } from 'rxjs';
+import { VehicleRepository } from '../../../core/domain/repositories/vehicle.repository';
+import { Vehicle } from '../../../core/domain/entities/vehicle.entity';
 
 @Injectable({
   providedIn: 'root',

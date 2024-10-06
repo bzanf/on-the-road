@@ -1,8 +1,8 @@
 import { Observable, of } from "rxjs";
-import { Vehicle } from "../../domain/entities/vehicle.entity";
+import { randomVehicles } from "../../../shared/utils/random-vehicle";
 import { VehicleRepository } from "../../domain/repositories/vehicle.repository";
-import { randomVehicles } from "../../shared/utils/random-vehicle";
-import { AppState } from "../../core/entities/app-state.entity";
+import { Vehicle } from "../../domain/entities/vehicle.entity";
+import { AppState } from "../../domain/entities/app-state.entity";
 
 export class VehicleInMemoryRepository implements VehicleRepository {
 

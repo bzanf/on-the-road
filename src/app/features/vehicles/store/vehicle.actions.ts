@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Vehicle } from '../../../domain/entities/vehicle.entity';
+import { Vehicle } from '../../../core/domain/entities/vehicle.entity';
 
 export const load = createAction('[Vehicles] Load Vehicles');
 export const loadSuccess = createAction('[Vehicles] Load Vehicles Success', props<{ vehicles: Vehicle[] }>());

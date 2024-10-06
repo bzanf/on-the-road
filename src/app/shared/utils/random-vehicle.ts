@@ -1,4 +1,4 @@
-import { Vehicle } from "../../domain/entities/vehicle.entity";
+import { Vehicle } from "../../core/domain/entities/vehicle.entity";
 import { randomString } from "./random-string";
 
 export function randomVehicles(count: number): Vehicle[] {
