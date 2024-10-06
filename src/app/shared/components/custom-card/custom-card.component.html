@@ -6,7 +6,7 @@
         <ng-content select="[card-header]"></ng-content>
     </div>
 
-    <div class="card-body">
+    <div class="card-body" [class.p-0]="noPaddingBody">
         <ng-content select="[card-body]"></ng-content>
     </div>
 

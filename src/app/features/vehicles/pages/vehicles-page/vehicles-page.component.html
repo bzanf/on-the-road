@@ -15,7 +15,11 @@
         <div card-body>test</div>
     </custom-card>
 
-    <custom-card headerTitle="VEHICLES" class="w-100">
+    <custom-card 
+        headerTitle="VEHICLES" 
+        [noPaddingBody]="true" 
+        class="w-100"
+    >
         <vehicles-table card-body [data$]="vehicles$"></vehicles-table> 
     </custom-card>
     

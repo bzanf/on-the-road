@@ -14,6 +14,7 @@ export class CustomCardComponent {
   }
 
   @Input() headerTitle?: string;
+  @Input() noPaddingBody: boolean = false;
 
   constructor(@Attribute('class') private classNames: string) { }
 
