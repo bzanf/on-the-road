@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AgGridAngular } from 'ag-grid-angular';
 import { ColDef, FirstDataRenderedEvent } from 'ag-grid-community';
 import { Vehicle } from '../../../../core/domain/entities/vehicle.entity';
+import { ActionsCellRendererComponent } from '../actions-cell-renderer/actions-cell-renderer.component';
 
 @Component({
   selector: 'vehicles-table',
@@ -17,12 +18,13 @@ export class VehiclesTableComponent {
   @Input() data$!: Observable<Vehicle[]>;
 
   colDefs: ColDef<Vehicle, string>[] = [
-    { field: "plate" },
+    { field: 'plate' },
     {
       headerName: 'Brand/Model',
       valueGetter: params => (params.data?.brand + '/' + params.data?.model)
     },
-    { field: "type" },
+    { field: 'type' },
+    { headerName: 'Actions', cellRenderer: ActionsCellRendererComponent }
   ];
 
   onFirstDataRendered(param: FirstDataRenderedEvent) {
