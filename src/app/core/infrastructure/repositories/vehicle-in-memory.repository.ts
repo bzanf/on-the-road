@@ -31,4 +31,9 @@ export class VehicleInMemoryRepository implements VehicleRepository {
         return of(vehicle);
     }
 
+
+    delete(id: number): Observable<number> {
+        return of(id);
+    }
+
 }

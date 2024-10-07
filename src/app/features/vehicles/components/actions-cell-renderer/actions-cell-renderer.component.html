@@ -6,6 +6,7 @@
         data-bs-toggle="tooltip"
         data-bs-placement="left" 
         data-bs-original-title="Edit"
+        (click)="edit()"
     >
         <i class="bi bi-pencil-fill"></i>
     </button>
@@ -15,7 +16,8 @@
         bsTooltip
         data-bs-toggle="tooltip"
         data-bs-placement="right" 
-        data-bs-original-title="Remove"
+        data-bs-original-title="Delete"
+        (click)="delete()"
     >
         <i class="bi bi-x-lg"></i>
     </button>

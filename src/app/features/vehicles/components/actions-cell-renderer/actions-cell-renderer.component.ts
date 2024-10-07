@@ -3,6 +3,8 @@ import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { ICellRendererParams } from 'ag-grid-community';
 import { Vehicle } from '../../../../core/domain/entities/vehicle.entity';
 import { TooltipDirective } from '../../../../shared/directives/tooltip/tooltip.directive';
+import { Store } from '@ngrx/store';
+import { delete_ } from '../../store/vehicle.actions';
 
 @Component({
   selector: 'app-actions-cell-renderer',
@@ -15,7 +17,7 @@ export class ActionsCellRendererComponent implements ICellRendererAngularComp {
 
   params!: ICellRendererParams<Vehicle>;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   agInit(params: ICellRendererParams<Vehicle>): void {
     this.params = params;
@@ -24,6 +26,17 @@ export class ActionsCellRendererComponent implements ICellRendererAngularComp {
   refresh(params: ICellRendererParams<Vehicle>): boolean {
     this.params = params;
     return true;
+  }
+
+  edit() {
+
+  }
+
+  delete() {
+    const id = this.params.data?.id;
+    if (id !== undefined) {
+      this.store.dispatch(delete_({ id: id }));
+    }
   }
 
 }

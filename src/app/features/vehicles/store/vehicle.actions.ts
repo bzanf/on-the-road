@@ -8,3 +8,7 @@ export const loadFailure = createAction('[Vehicles] Load Vehicles Failure', prop
 export const add = createAction('[Vehicles] Add Vehicle', props<{ vehicle: Vehicle }>());
 export const addSuccess = createAction('[Vehicles] Add Vehicle Success', props<{ vehicle: Vehicle }>());
 export const addFailure = createAction('[Vehicles] Add Vehicle Failure', props<{ error: any }>());
+
+export const delete_ = createAction('[Vehicles] Delete Vehicle', props<{ id: number }>());
+export const deleteSuccess = createAction('[Vehicles] Delete Vehicle Success', props<{ id: number }>());
+export const deleteFailure = createAction('[Vehicles] Delete Vehicle Failure', props<{ error: any }>());

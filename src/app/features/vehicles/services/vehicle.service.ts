@@ -14,8 +14,12 @@ export class VehicleService {
     return this.vehicleRepository.getAll();
   }
 
-  addVehicle(vehicle: Vehicle): Observable<Vehicle> {
+  add(vehicle: Vehicle): Observable<Vehicle> {
     return this.vehicleRepository.add(vehicle);
+  }
+
+  delete(id: number): Observable<number> {
+    return this.vehicleRepository.delete(id);
   }
 
 }

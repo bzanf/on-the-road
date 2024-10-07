@@ -21,6 +21,10 @@ export const vehicleReducer = createReducer(
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
 
     on(VehicleActions.add, state => ({ ...state, loading: true })),
-    on(VehicleActions.addSuccess, (state, { vehicle }) => ({ ...state, vehicles: [...state.vehicles, vehicle] })),
+    on(VehicleActions.addSuccess, (state, { vehicle }) => ({ ...state, loading: false, vehicles: [...state.vehicles, vehicle] })),
     on(VehicleActions.loadFailure, (state, { error }) => ({ ...state, loading: false, error })),
+
+    on(VehicleActions.delete_, state => ({ ...state, loading: true })),
+    on(VehicleActions.deleteSuccess, (state, { id }) => ({ ...state, loading: false, vehicles: state.vehicles.filter(v => v.id !== id) })),
+    on(VehicleActions.deleteFailure, (state, { error }) => ({ ...state, loading: false, error })),
 );
