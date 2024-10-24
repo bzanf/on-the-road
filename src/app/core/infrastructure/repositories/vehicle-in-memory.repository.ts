@@ -7,11 +7,6 @@ import { AppState } from "../../domain/entities/app-state.entity";
 export class VehicleInMemoryRepository implements VehicleRepository {
 
     getAll(): Observable<Vehicle[]> {
-        // console.log('get all');
-        // if (Math.random() > 0.7) {
-        //     throw new Error("Error test.");
-        // }
-
         const savedState = localStorage.getItem('appState');
         if (savedState) {
             const appState: AppState = JSON.parse(savedState);
@@ -23,12 +18,26 @@ export class VehicleInMemoryRepository implements VehicleRepository {
     }
 
     add(vehicle: Vehicle): Observable<Vehicle> {
-        // console.log('add');
-        // if (Math.random() > 0.7) {
-        //     throw new Error("Error test.");
-        // }
+        let lastIndex = 0;
+        const savedState = localStorage.getItem('appState');
 
-        return of(vehicle);
+        if (savedState) {
+            const appState: AppState = JSON.parse(savedState);
+            let vehiclesIds = appState.vehicle?.vehicles?.map(v => Vehicle.fromJSON(v).id) ?? [0];
+            vehiclesIds = vehiclesIds.length === 0 ? [0] : vehiclesIds;
+            lastIndex = Math.max(...vehiclesIds);
+        }
+
+        const newVehicle = new Vehicle(
+            lastIndex + 1,
+            vehicle.plate,
+            vehicle.brand,
+            vehicle.model,
+            vehicle.vehicleType,
+            vehicle.axleCount
+        );
+
+        return of(newVehicle);
     }
 
 
