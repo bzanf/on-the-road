@@ -10,7 +10,7 @@ export function randomVehicles(count: number): Vehicle[] {
         const model = randomString('text', Math.round(Math.random() * 8) + 5);
         const type = Math.round(Math.random() * 2) + 1;
 
-        vehicles.push(new Vehicle(index + 1, plate, brand, model, type, 2));
+        vehicles.push(new Vehicle(undefined, plate, brand, model, type, 2));
     }
 
     return vehicles;
