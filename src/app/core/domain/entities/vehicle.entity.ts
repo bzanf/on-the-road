@@ -9,8 +9,8 @@ export class Vehicle {
     private _type: VehicleType;
     private _axleCount: number;
 
-    constructor(id: number, plate: string, brand: string, model: string, type: VehicleType, axleCount: number) {
-        this._id = id;
+    constructor(id: number | undefined, plate: string, brand: string, model: string, type: VehicleType, axleCount: number) {
+        this._id = id ?? 0;
         this._plate = plate;
         this._brand = brand;
         this._model = model;
@@ -36,6 +36,10 @@ export class Vehicle {
 
     get type(): string {
         return VehicleType[this._type];
+    }
+
+    get vehicleType(): VehicleType {
+        return this._type;
     }
 
     get axleCount(): number {
