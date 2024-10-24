@@ -10,21 +10,8 @@ export function localStorageReducer(reducer: ActionReducer<any>): ActionReducer<
         }
 
         const nextState = reducer(state, action);
-
         localStorage.setItem('appState', JSON.stringify(nextState));
 
         return nextState;
     };
 }
-
-// import { ActionReducerMap } from '@ngrx/store';
-// // import { userReducer, UserState } from '../../features/vehicles/store/vehicle.reducer';
-// import { State, vehicleReducer } from '../../features/vehicles/store/vehicle.reducer';
-
-// export interface AppState {
-//   vehicle: State;
-// }
-
-// export const reducers: ActionReducerMap<AppState> = {
-//     vehicle: vehicleReducer
-// };
