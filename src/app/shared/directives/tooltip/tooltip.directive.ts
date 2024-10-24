@@ -1,16 +1,22 @@
-import { AfterViewInit, Directive, ElementRef } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, OnDestroy } from '@angular/core';
 import { Tooltip } from 'bootstrap';
 
 @Directive({
   selector: '[bsTooltip]',
   standalone: true
 })
-export class TooltipDirective implements AfterViewInit {
+export class TooltipDirective implements AfterViewInit, OnDestroy {
+
+  tooltip!: Tooltip;
 
   constructor(private elementRef: ElementRef) { }
 
   ngAfterViewInit(): void {
-    new Tooltip(this.elementRef.nativeElement);
+    this.tooltip = new Tooltip(this.elementRef.nativeElement, { trigger: 'hover' });
+  }
+
+  ngOnDestroy(): void {
+    this.tooltip?.dispose();
   }
 
 }
